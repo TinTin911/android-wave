@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.android.box.waveprotocol.org.androidwave" >
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,8 +20,6 @@
             </intent-filter>
         </activity>
 
-        <!--<activity android:name=".SignUpActivity"/>
-        <activity android:name=".LoginActivity"/>-->
         <activity android:name=".LoginActivity"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
