@@ -20,20 +20,31 @@
 package app.android.box.waveprotocol.org.androidwave;
 
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+=======
+import android.support.v7.app.ActionBarActivity;
+
+>>>>>>> 3a5bf3cd1d221adb8d983bc495b1a6fcc5c8e54e
 
 /**
  * Created by roshan on 6/25/15.
  */
+<<<<<<< HEAD
 public class InboxActivity extends AppCompatActivity {
     private Toolbar toolbar;
+=======
+public class InboxActivity extends ActionBarActivity {
+
+>>>>>>> 3a5bf3cd1d221adb8d983bc495b1a6fcc5c8e54e
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inbox);
 
+<<<<<<< HEAD
         toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
     }
@@ -59,6 +70,9 @@ public class InboxActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+=======
+
+>>>>>>> 3a5bf3cd1d221adb8d983bc495b1a6fcc5c8e54e
     }
     */
 }
