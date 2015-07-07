@@ -86,7 +86,7 @@ public class SignUpActivity extends Activity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                waveSignUpTask.execute(Util.getHostAndUserNames(username.getText().toString())[1], Util.getHostAndUserNames(username.getText().toString())[0], password.getText().toString());
+                waveSignUpTask.execute(Util.getHostAndUserNames(username.getText().toString())[0], Util.getHostAndUserNames(username.getText().toString())[0], password.getText().toString());
             }
         });
 

@@ -1,31 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
-    <item
-        android:id="@+id/action_search"
-        android:orderInCategory="200"
-        android:title="Search"
-        android:icon="@drawable/ic_search"
-        app:showAsAction="ifRoom"
-        ></item>
-=======
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".InboxActivity">
-
-    <item
-        android:id="@+id/action_search"
-        android:title="@string/action_search"
-        android:orderInCategory="100"
-        android:icon="@drawable/ic_action_search"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
->>>>>>> 3a5bf3cd1d221adb8d983bc495b1a6fcc5c8e54e
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" android:showAsAction="never" />
 </menu>

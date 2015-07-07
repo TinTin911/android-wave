@@ -20,12 +20,9 @@
 package app.android.box.waveprotocol.org.androidwave;
 
 import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -45,7 +42,7 @@ import app.android.box.waveprotocol.org.androidwave.app.android.box.waveprotocol
  * Apache Wave Sign In Activity
  * Created by roshan on 6/24/15.
  */
-public class LoginActivity extends Activity implements ServiceConnection {
+public class LoginActivity extends Activity {
 
     private static final String CHARSET = "utf-8";
     private static String WAVE_SESSION_COOKIE = "WSESSIONID";
@@ -69,7 +66,6 @@ public class LoginActivity extends Activity implements ServiceConnection {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent openInboxActivity = new Intent("app.android.box.waveprotocol.org.androidwave.INBOXACTIVITY");
                 startActivity(openInboxActivity);
 
@@ -163,15 +159,5 @@ public class LoginActivity extends Activity implements ServiceConnection {
         }
 
         return sessionId;
-    }
-
-    @Override
-    public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-
-    }
-
-    @Override
-    public void onServiceDisconnected(ComponentName componentName) {
-
     }
 }
