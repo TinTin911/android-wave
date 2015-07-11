@@ -37,6 +37,7 @@
         </activity>
 
         <activity android:name=".InboxActivity"
+            android:label="@string/inbox_name"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="app.android.box.waveprotocol.org.androidwave.INBOXACTIVITY" />
