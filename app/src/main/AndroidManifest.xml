@@ -44,5 +44,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".NewWaveActivity"
+            android:label="@string/inbox_name"
+            android:theme="@style/MyMaterialTheme">
+            <intent-filter>
+                <action android:name="app.android.box.waveprotocol.org.androidwave.NEWWAVEACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

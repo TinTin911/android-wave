@@ -15,5 +15,21 @@
             layout="@layout/tool_bar" />
     </LinearLayout>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/frameLayout">
+    <ImageButton
+        android:layout_margin="15dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_action"
+        android:background="@drawable/circle"
+        android:id="@+id/imageButton"
+        android:layout_gravity="right|bottom" />
+    </FrameLayout>
 
 </RelativeLayout>
