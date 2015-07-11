@@ -19,16 +19,21 @@
 
 package app.android.box.waveprotocol.org.androidwave;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 /**
  * Created by roshan on 6/25/15.
  */
-public class InboxActivity extends Activity{
+public class InboxActivity extends AppCompatActivity{
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inbox);
+
+        toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
+        setSupportActionBar(toolbar);
     }
 }
