@@ -19,6 +19,7 @@
 
 package app.android.box.waveprotocol.org.androidwave;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -45,7 +46,9 @@ public class InboxActivity extends AppCompatActivity{
         FAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.activity_new_wave);
+                Intent openNewWavectivity = new Intent("app.android.box.waveprotocol.org.androidwave.NEWWAVEACTIVITY");
+                startActivity(openNewWavectivity);
+                //setContentView(R.layout.activity_new_wave);
             }
         });
 
