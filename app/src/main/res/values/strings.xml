@@ -1,7 +1,13 @@
 <resources>
+
     <string name="app_name">Android Wave</string>
     <string name="inbox_name">Inbox</string>
+    <string name="new_wave_name">Create Wave</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="inbox_string">Inbox</string>
+    <string name="sign_out_string">Sing Out</string>
+
 </resources>
