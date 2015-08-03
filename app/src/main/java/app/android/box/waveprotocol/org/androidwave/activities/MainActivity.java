@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package app.android.box.waveprotocol.org.androidwave;
+package app.android.box.waveprotocol.org.androidwave.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,6 +25,8 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import app.android.box.waveprotocol.org.androidwave.R;
 
 
 public class MainActivity extends Activity{

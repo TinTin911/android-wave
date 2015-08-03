@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package app.android.box.waveprotocol.org.androidwave;
+package app.android.box.waveprotocol.org.androidwave.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +26,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
+
+import app.android.box.waveprotocol.org.androidwave.R;
 
 /**
  * Created by roshan on 6/25/15.

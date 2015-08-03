@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/MyMaterialTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginActivity"
+        <activity android:name=".activities.LoginActivity"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
             <action android:name="app.android.box.waveprotocol.org.androidwave.LOGINACTIVITY" />
@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".InboxActivity"
+        <activity android:name=".activities.InboxActivity"
             android:label="@string/inbox_name"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
@@ -45,7 +45,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NewWaveActivity"
+        <activity android:name=".activities.NewWaveActivity"
             android:label="@string/new_wave_name"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>

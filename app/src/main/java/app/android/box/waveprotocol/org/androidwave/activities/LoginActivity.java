@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package app.android.box.waveprotocol.org.androidwave;
+package app.android.box.waveprotocol.org.androidwave.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -26,6 +26,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import app.android.box.waveprotocol.org.androidwave.R;
 
 /**
  * Apache Wave Sign In Activity

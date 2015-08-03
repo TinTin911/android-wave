@@ -1,9 +1,11 @@
-package app.android.box.waveprotocol.org.androidwave;
+package app.android.box.waveprotocol.org.androidwave.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+
+import app.android.box.waveprotocol.org.androidwave.R;
 
 /**
  * Created by roshan on 7/12/15.
