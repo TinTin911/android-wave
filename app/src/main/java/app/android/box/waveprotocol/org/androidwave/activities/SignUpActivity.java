@@ -77,17 +77,20 @@ public class SignUpActivity extends Activity {
 
             @Override
             protected void onPostExecute(Boolean signUpResult) {
-                if (signUpResult)
+                if (signUpResult) {
+                    Intent openLoginActivity = new Intent("app.android.box.waveprotocol.org.androidwave.LOGINACTIVITY");
+                    startActivity(openLoginActivity);
                     Toast.makeText(SignUpActivity.this, "User sign up successfully", Toast.LENGTH_LONG).show();
-                else
+                }else {
                     Toast.makeText(SignUpActivity.this, "User sign up fail", Toast.LENGTH_LONG).show();
+                }
             }
         };
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                waveSignUpTask.execute(Util.getHostAndUserNames(username.getText().toString())[0], Util.getHostAndUserNames(username.getText().toString())[0], password.getText().toString());
+                waveSignUpTask.execute(Util.getHostAndUserNames(username.getText().toString())[1], Util.getHostAndUserNames(username.getText().toString())[0], password.getText().toString());
             }
         });
 

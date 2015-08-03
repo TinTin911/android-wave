@@ -21,13 +21,23 @@ package app.android.box.waveprotocol.org.androidwave.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.List;
+
 import app.android.box.waveprotocol.org.androidwave.R;
+import app.android.box.waveprotocol.org.androidwave.util.Util;
 
 /**
  * Apache Wave Sign In Activity
@@ -35,15 +45,15 @@ import app.android.box.waveprotocol.org.androidwave.R;
  */
 public class LoginActivity extends Activity {
 
-//    private static final String CHARSET = "utf-8";
-//    private static String WAVE_SESSION_COOKIE = "WSESSIONID";
+    private static final String CHARSET = "utf-8";
+    private static String WAVE_SESSION_COOKIE = "WSESSIONID";
 
     Button login;
     TextView singup;
     EditText email;
     EditText password;
 
-//    AsyncTask<String, Void, String> waveSignInTask;
+    AsyncTask<String, Void, String> waveSignInTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,72 +93,72 @@ public class LoginActivity extends Activity {
      * @param password Apache Wave user's password
      * @return Apache Wave user's sessionId
      */
-//    private String waveSignIn(String host, String username, String password) {
-//
-//        String sessionId = null;
-//
-//        String servlet = "auth/signin?r=none";
-//        String hostURL = Util.hostCreator(host, servlet);
-//        String httpQuery = "";
-//        HttpURLConnection connection = null;
-//
-//        try {
-//            httpQuery = "address=" + URLEncoder.encode(username, "UTF-8") + "&password="
-//                    + URLEncoder.encode(password, CHARSET) + "&signIn="
-//                    + URLEncoder.encode("Sign+in", CHARSET);
-//
-//        } catch (UnsupportedEncodingException e) {
-//            Log.e(LoginActivity.class.getSimpleName(), "Http Query encoding error");
-//            e.printStackTrace();
-//        }
-//
-//        try {
-//
-//            URL url = new URL(hostURL);
-//            connection = (HttpURLConnection) url.openConnection();
-//
-//            connection.setDoOutput(true);
-//            connection.setRequestProperty("Accept-Charset", CHARSET);
-//            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset="
-//                    + CHARSET);
-//
-//            OutputStream out = connection.getOutputStream();
-//            out.write(httpQuery.getBytes(CHARSET));
-//
-//
-//            if (connection.getResponseCode() == 200) {
-//
-//                List<String> cookies = connection.getHeaderFields().get("Set-Cookie");
-//
-//                for (String c : cookies) {
-//                    if (c.startsWith(WAVE_SESSION_COOKIE)) {
-//
-//                        String cookie = c;
-//
-//                        if (cookie.contains(";"))
-//                            cookie = cookie.split(";")[0];
-//
-//                        sessionId = cookie.split("=")[1];
-//                        break;
-//                    }
-//                }
-//
-//                if (sessionId == null) {
-//                    Log.e(LoginActivity.class.getSimpleName(), "Cookie session not found");
-//                }
-//
-//
-//            } else {
-//                Log.e(LoginActivity.class.getSimpleName(), "Http error");
-//            }
-//
-//        } catch (Exception e) {
-//            Log.e(LoginActivity.class.getSimpleName(), "Http login error");
-//            e.printStackTrace();
-//        } finally {
-//            connection.disconnect();
-//        }
-//
-//        return sessionId;
-//    }
+    private String waveSignIn(String host, String username, String password) {
+
+        String sessionId = null;
+
+        String servlet = "auth/signin?r=none";
+        String hostURL = Util.hostCreator(host, servlet);
+        String httpQuery = "";
+        HttpURLConnection connection = null;
+
+        try {
+            httpQuery = "address=" + URLEncoder.encode(username, "UTF-8") + "&password="
+                    + URLEncoder.encode(password, CHARSET) + "&signIn="
+                    + URLEncoder.encode("Sign+in", CHARSET);
+
+        } catch (UnsupportedEncodingException e) {
+            Log.e(LoginActivity.class.getSimpleName(), "Http Query encoding error");
+            e.printStackTrace();
+        }
+
+        try {
+
+            URL url = new URL(hostURL);
+            connection = (HttpURLConnection) url.openConnection();
+
+            connection.setDoOutput(true);
+            connection.setRequestProperty("Accept-Charset", CHARSET);
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset="
+                    + CHARSET);
+
+            OutputStream out = connection.getOutputStream();
+            out.write(httpQuery.getBytes(CHARSET));
+
+
+            if (connection.getResponseCode() == 200) {
+
+                List<String> cookies = connection.getHeaderFields().get("Set-Cookie");
+
+                for (String c : cookies) {
+                    if (c.startsWith(WAVE_SESSION_COOKIE)) {
+
+                        String cookie = c;
+
+                        if (cookie.contains(";"))
+                            cookie = cookie.split(";")[0];
+
+                        sessionId = cookie.split("=")[1];
+                        break;
+                    }
+                }
+
+                if (sessionId == null) {
+                    Log.e(LoginActivity.class.getSimpleName(), "Cookie session not found");
+                }
+
+
+            } else {
+                Log.e(LoginActivity.class.getSimpleName(), "Http error");
+            }
+
+        } catch (Exception e) {
+            Log.e(LoginActivity.class.getSimpleName(), "Http login error");
+            e.printStackTrace();
+        } finally {
+            connection.disconnect();
+        }
+
+        return sessionId;
+    }
 }

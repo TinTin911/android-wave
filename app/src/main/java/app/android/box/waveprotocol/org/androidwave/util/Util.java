@@ -33,7 +33,7 @@ public class Util {
         StringBuilder hostUrl = new StringBuilder();
 
         if (hostname.equalsIgnoreCase("local.net")) {
-            hostname = "localhost:9898";
+            hostname = "10.0.2.2:9898";
         }
 
         return hostUrl.append("http://").append(hostname).append("/").append(servlet).toString();

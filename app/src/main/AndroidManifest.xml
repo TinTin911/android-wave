@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SignUpActivity"
+        <activity android:name=".activities.SignUpActivity"
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="app.android.box.waveprotocol.org.androidwave.SINGUPACTIVITY" />
