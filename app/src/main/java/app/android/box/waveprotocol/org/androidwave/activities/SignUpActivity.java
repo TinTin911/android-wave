@@ -23,32 +23,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
-
 import app.android.box.waveprotocol.org.androidwave.R;
+import app.android.box.waveprotocol.org.androidwave.service.WaveService;
 import app.android.box.waveprotocol.org.androidwave.util.Util;
 
-/**
- * Apache Wave Sign Up Activity
- * Created by roshan on 6/24/15.
- */
 public class SignUpActivity extends Activity {
 
-    private static final String CHARSET = "utf-8";
     EditText username;
     EditText password;
     EditText reEnterPassword;
@@ -72,8 +58,10 @@ public class SignUpActivity extends Activity {
 
             @Override
             protected Boolean doInBackground(String... params) {
-                return waveSignUp(params[0], params[1], params[2]);
+                WaveService waveService = new WaveService();
+                return waveService.waveSignUpTask(params[0], params[1], params[2]);
             }
+
 
             @Override
             protected void onPostExecute(Boolean signUpResult) {
@@ -81,8 +69,9 @@ public class SignUpActivity extends Activity {
                     Intent openLoginActivity = new Intent("app.android.box.waveprotocol.org.androidwave.LOGINACTIVITY");
                     startActivity(openLoginActivity);
                     Toast.makeText(SignUpActivity.this, "User sign up successfully", Toast.LENGTH_LONG).show();
-                }else {
+                } else {
                     Toast.makeText(SignUpActivity.this, "User sign up fail", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignUpActivity.this, "Please try again later...", Toast.LENGTH_LONG).show();
                 }
             }
         };
@@ -101,60 +90,6 @@ public class SignUpActivity extends Activity {
                 startActivity(openLoginActivity);
             }
         });
-    }
-
-
-    /**
-     * This method get Wave server name, Wave user's username and Wave user's password as input parameters
-     * and it will invoke UserRegistrationServlet in the Wave server. If sign up get success the method
-     * will return true if not it return false
-     *
-     * @param host     Apache Wave hostname
-     * @param username Apache Wave user's username
-     * @param password Apache Wave user's password
-     * @return True or false
-     */
-    private boolean waveSignUp(String host, String username, String password) {
-
-        String servlet = "auth/register";
-        String hostURL = Util.hostCreator(host, servlet);
-        String httpQuery = "";
-        HttpURLConnection connection = null;
-
-        try {
-            httpQuery = "address=" + URLEncoder.encode(username, CHARSET) + "&password="
-                    + URLEncoder.encode(password, CHARSET);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            URL url = new URL(hostURL);
-            connection = (HttpURLConnection) url.openConnection();
-            connection.setDoOutput(true);
-            connection.setRequestProperty("Accept-Charset", CHARSET);
-            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset="
-                    + CHARSET);
-
-            OutputStream out = connection.getOutputStream();
-            out.write(httpQuery.getBytes(CHARSET));
-
-            if (connection.getResponseCode() == 200) {
-                Log.i(SignUpActivity.class.getSimpleName(), "User sign up successfully");
-                return true;
-
-            } else {
-                Log.e(SignUpActivity.class.getSimpleName(), "User sign up fail");
-                return false;
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            connection.disconnect();
-        }
-
-        return false;
     }
 
 }
