@@ -25,6 +25,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import app.android.box.waveprotocol.org.androidwave.R;
@@ -35,6 +36,8 @@ import app.android.box.waveprotocol.org.androidwave.R;
 public class InboxActivity extends AppCompatActivity{
     private Toolbar toolbar;
     ImageButton FAB;
+    Button singOut;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +47,7 @@ public class InboxActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
 
         FAB = (ImageButton) findViewById(R.id.imageButton);
+        singOut = (Button) findViewById(R.id.singOut);
 
         FAB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +57,15 @@ public class InboxActivity extends AppCompatActivity{
                 //setContentView(R.layout.activity_new_wave);
             }
         });
+
+        /*The Singout Method*/
+        singOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //singout method body
+            }
+        });
+
 
 
     }

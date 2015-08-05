@@ -9,5 +9,6 @@
 
     <string name="inbox_string">Inbox</string>
     <string name="sign_out_string">Sing Out</string>
+    <string name="singOut">Sing Out</string>
 
 </resources>

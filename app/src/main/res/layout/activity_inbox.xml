@@ -4,6 +4,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/singOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/singOut" />
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
