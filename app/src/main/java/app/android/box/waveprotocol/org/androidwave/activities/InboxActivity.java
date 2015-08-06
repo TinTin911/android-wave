@@ -46,6 +46,7 @@ public class InboxActivity extends AppCompatActivity{
         toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
 
+
         FAB = (ImageButton) findViewById(R.id.imageButton);
         singOut = (Button) findViewById(R.id.singOut);
 

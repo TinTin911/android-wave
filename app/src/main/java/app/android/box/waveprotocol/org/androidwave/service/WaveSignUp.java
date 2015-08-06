@@ -17,14 +17,6 @@ public class WaveSignUp {
 
     private static final String CHARSET = "utf-8";
 
-    public void signUpTask(){
-
-
-    }
-
-
-
-
     /**
      * This method get Wave server name, Wave user's username and Wave user's password as input parameters
      * and it will invoke UserRegistrationServlet in the Wave server. If sign up get success the method
