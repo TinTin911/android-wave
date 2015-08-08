@@ -21,9 +21,21 @@ package app.android.box.waveprotocol.org.androidwave.service;
 
 import android.os.AsyncTask;
 
+import org.waveprotocol.wave.model.id.IdGenerator;
+import org.waveprotocol.wave.model.wave.ParticipantId;
+
+import app.android.box.waveprotocol.org.androidwave.models.TypeIdGenerator;
+
 public class WaveService {
 
+    private String waveHost;
     private String waveSessionId;
+    private String waveUsername;
+
+    private ParticipantId participantId;
+    private IdGenerator idGenerator;
+    private TypeIdGenerator typeIdGenerator;
+
 
     public boolean waveSignUpTask(String host, String username, String password){
         WaveSignUp waveSignUpService = new WaveSignUp();
@@ -42,6 +54,22 @@ public class WaveService {
         this.waveSessionId = waveSessionId;
     }
 
+    public String getWaveHost() {
+        return waveHost;
+    }
+
+    public void setWaveHost(String waveHost) {
+        this.waveHost = waveHost;
+    }
+
+    public String getWaveUsername() {
+        return waveUsername;
+    }
+
+    public void setWaveUsername(String waveUsername) {
+        this.waveUsername = waveUsername;
+    }
+
     public class WaveSession extends AsyncTask<String, Void, String>{
 
         @Override
@@ -54,9 +82,19 @@ public class WaveService {
         @Override
         protected void onPostExecute(String result) {
             if (result != null){
-
+                openWebSocketConnection(waveHost, waveSessionId);
             }
         }
+    }
+
+    public boolean isWaveSessionStarted() {
+        return waveSessionId != null;
+    }
+
+    private void openWebSocketConnection(String hostName, String SessionId){
+
+        String webSocketUrl = "http://"+ hostName +"/atmosphere";
+
     }
 
 }
