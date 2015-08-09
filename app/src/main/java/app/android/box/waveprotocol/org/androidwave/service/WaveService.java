@@ -22,6 +22,7 @@ package app.android.box.waveprotocol.org.androidwave.service;
 import android.os.AsyncTask;
 
 import org.waveprotocol.wave.model.id.IdGenerator;
+import org.waveprotocol.wave.model.id.IdGeneratorImpl;
 import org.waveprotocol.wave.model.wave.ParticipantId;
 
 import app.android.box.waveprotocol.org.androidwave.models.TypeIdGenerator;
@@ -94,6 +95,17 @@ public class WaveService {
     private void openWebSocketConnection(String hostName, String SessionId){
 
         String webSocketUrl = "http://"+ hostName +"/atmosphere";
+
+        idGenerator = new IdGeneratorImpl(webSocketUrl, new IdGeneratorImpl.Seed() {
+            @Override
+            public String get() {
+                return waveSessionId.substring(0, 5);
+            }
+        });
+
+        typeIdGenerator = TypeIdGenerator.get(idGenerator);
+
+
 
     }
 

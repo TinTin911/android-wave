@@ -22,6 +22,7 @@ android {
         compile 'com.android.support:appcompat-v7:22.2.0'
         compile 'com.android.support:design:22.2.0'
         compile 'com.jakewharton:butterknife:6.1.0'
+        compile 'com.ning:async-http-client:1.6.4'
     }
 }
 
