@@ -53,5 +53,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activities.SearchActivity"
+            android:label="@string/search_name"
+            android:theme="@style/MyMaterialTheme">
+            <intent-filter>
+                <action android:name="app.android.box.waveprotocol.org.androidwave.SEARCHACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

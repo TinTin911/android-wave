@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/singOut" />
+        android:text="@string/sing_out_string" />
 
     <LinearLayout
         android:layout_width="fill_parent"
