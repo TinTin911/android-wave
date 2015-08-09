@@ -29,7 +29,6 @@ import android.widget.TextView;
 
 import app.android.box.waveprotocol.org.androidwave.R;
 import app.android.box.waveprotocol.org.androidwave.service.WaveService;
-import app.android.box.waveprotocol.org.androidwave.util.Util;
 
 public class LoginActivity extends Activity {
 
@@ -53,7 +52,9 @@ public class LoginActivity extends Activity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startLoginSession(Util.getHostAndUserNames(username.getText().toString())[1], Util.getHostAndUserNames(username.getText().toString())[0], password.getText().toString());
+                //startLoginSession(Util.getHostAndUserNames(username.getText().toString())[1], Util.getHostAndUserNames(username.getText().toString())[0], password.getText().toString());
+                Intent openLoginActivity = new Intent("app.android.box.waveprotocol.org.androidwave.INBOXACTIVITY");
+                startActivity(openLoginActivity);
             }
         });
 
