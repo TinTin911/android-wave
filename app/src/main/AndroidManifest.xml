@@ -37,7 +37,7 @@
         </activity>
 
         <activity android:name=".activities.InboxActivity"
-            android:label="@string/inbox_name"
+            android:label=""
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="app.android.box.waveprotocol.org.androidwave.INBOXACTIVITY" />
@@ -46,7 +46,7 @@
         </activity>
 
         <activity android:name=".activities.NewWaveActivity"
-            android:label="@string/new_wave_name"
+            android:label=""
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="app.android.box.waveprotocol.org.androidwave.NEWWAVEACTIVITY" />

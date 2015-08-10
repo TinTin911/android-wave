@@ -38,6 +38,7 @@ public class InboxActivity extends AppCompatActivity{
     private Toolbar toolbar;
     ImageButton FAB;
     Button singOut;
+    ImageButton search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,8 @@ public class InboxActivity extends AppCompatActivity{
 
 
         FAB = (ImageButton) findViewById(R.id.imageButton);
-        singOut = (Button) findViewById(R.id.singOut);
+        search = (ImageButton) findViewById(R.id.ic_search);
+        //singOut = (Button) findViewById(R.id.singOut);
 
         FAB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,42 +60,41 @@ public class InboxActivity extends AppCompatActivity{
                 startActivity(openNewWavectivity);
                 //test
                 //setContentView(R.layout.activity_new_wave);
-                //test2
             }
         });
 
-        /*The Singout Method*/
-        singOut.setOnClickListener(new View.OnClickListener() {
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //singout method body
+                Intent openNewWavectivity = new Intent("app.android.box.waveprotocol.org.androidwave.SEARCHACTIVITY");
+                startActivity(openNewWavectivity);
+                //test
+                //setContentView(R.layout.activity_new_wave);
             }
         });
 
-
-
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+//    @Override
+////    public boolean onCreateOptionsMenu(Menu menu) {
+////        // Inflate the menu; this adds items to the action bar if it is present.
+////        getMenuInflater().inflate(R.menu.menu_main, menu);
+////        return true;
+////    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+////        if (id == R.id.action_search) {
+////            Intent openSearchActivity = new Intent("app.android.box.waveprotocol.org.androidwave.SEARCHACTIVITY");
+////            startActivity(openSearchActivity);
+////        }
+//
+//        return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_search) {
-            Intent openSearchActivity = new Intent("app.android.box.waveprotocol.org.androidwave.SEARCHACTIVITY");
-            startActivity(openSearchActivity);
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-}
