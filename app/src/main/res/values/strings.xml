@@ -12,6 +12,8 @@
 
     <string name="search_name">Search</string>
 
+    <string name="search_hint">Search wave</string>
+
 
 
 </resources>

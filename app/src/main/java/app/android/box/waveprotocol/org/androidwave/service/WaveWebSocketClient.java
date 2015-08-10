@@ -99,7 +99,7 @@ public class WaveWebSocketClient implements WaveWebSocket.WaveSocketCallback {
         this.urlBase = urlBase;
 
         submitRequestCallbacks = CollectionUtils.createIntMap();
-        socket = WaveSocketFactory.create(false, urlBase, httpSessionId, this);
+        //socket = WaveSocketFactory.create(false, urlBase, httpSessionId, this);
     }
 
     public void attachHandler(WaveWebSocketCallback callback) {
@@ -113,7 +113,7 @@ public class WaveWebSocketClient implements WaveWebSocket.WaveSocketCallback {
         connectionListener = listener;
 
         if (socket == null) {
-            socket = WaveSocketFactory.create(true, urlBase, httpSessionId, WaveWebSocketClient.this);
+           // socket = WaveSocketFactory.create(true, urlBase, httpSessionId, WaveWebSocketClient.this);
         }
 
         connectTry++;
