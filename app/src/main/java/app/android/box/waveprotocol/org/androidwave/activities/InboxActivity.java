@@ -58,6 +58,7 @@ public class InboxActivity extends AppCompatActivity{
                 startActivity(openNewWavectivity);
                 //test
                 //setContentView(R.layout.activity_new_wave);
+                //test2
             }
         });
 
