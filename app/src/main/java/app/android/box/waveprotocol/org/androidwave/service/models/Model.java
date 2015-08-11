@@ -1,4 +1,4 @@
-package app.android.box.waveprotocol.org.androidwave.models;
+package app.android.box.waveprotocol.org.androidwave.service.models;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -12,7 +12,6 @@ import org.waveprotocol.wave.model.document.Doc.E;
 import org.waveprotocol.wave.model.document.ObservableDocument;
 import org.waveprotocol.wave.model.document.WaveContext;
 import org.waveprotocol.wave.model.document.operation.DocInitialization;
-import org.waveprotocol.wave.model.document.parser.XmlParseException;
 import org.waveprotocol.wave.model.document.util.DefaultDocEventRouter;
 import org.waveprotocol.wave.model.document.util.DocEventRouter;
 import org.waveprotocol.wave.model.document.util.DocHelper;
@@ -241,11 +240,13 @@ public class Model implements SourcesEvents<Model.Listener> {
         try {
             op = DocProviders.POJO.parse(initContent).asOperation();
         } catch (IllegalArgumentException e) {
+            /*
             if (e.getCause() instanceof XmlParseException) {
 
             } else {
 
             }
+            **/
             return null;
         }
 

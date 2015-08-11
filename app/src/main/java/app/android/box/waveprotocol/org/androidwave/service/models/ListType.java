@@ -1,4 +1,4 @@
-package app.android.box.waveprotocol.org.androidwave.models;
+package app.android.box.waveprotocol.org.androidwave.service.models;
 
 
 import org.waveprotocol.wave.model.adt.ObservableElementList;
@@ -142,9 +142,8 @@ public class ListType extends Type implements SourcesEvents<ListType.Listener> {
                 "ListType.add(): forbidden to add an already attached Type");
 
         value.attach(null);
-        Type listValue = observableList.add(value.getListElementInitializer());
 
-        return listValue;
+        return observableList.add(value.getListElementInitializer());
     }
 
     public Type add(int index, Type value) {
@@ -156,9 +155,8 @@ public class ListType extends Type implements SourcesEvents<ListType.Listener> {
                 "ListType.add(): forbidden to add an already attached Type");
 
         value.attach(null);
-        Type listValue = observableList.add(index, value.getListElementInitializer());
 
-        return listValue;
+        return observableList.add(index, value.getListElementInitializer());
     }
 
     public Type remove(int index) {
@@ -204,9 +202,9 @@ public class ListType extends Type implements SourcesEvents<ListType.Listener> {
 
     public interface Listener {
 
-        public void onValueAdded(Type entry);
+        void onValueAdded(Type entry);
 
-        public void onValueRemoved(Type entry);
+        void onValueRemoved(Type entry);
 
     }
 

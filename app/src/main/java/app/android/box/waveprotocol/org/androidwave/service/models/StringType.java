@@ -1,4 +1,4 @@
-package app.android.box.waveprotocol.org.androidwave.models;
+package app.android.box.waveprotocol.org.androidwave.service.models;
 
 import org.waveprotocol.wave.model.adt.ObservableBasicValue;
 import org.waveprotocol.wave.model.util.CopyOnWriteSet;

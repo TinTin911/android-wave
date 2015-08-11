@@ -25,7 +25,7 @@ import org.waveprotocol.wave.model.id.IdGenerator;
 import org.waveprotocol.wave.model.id.IdGeneratorImpl;
 import org.waveprotocol.wave.model.wave.ParticipantId;
 
-import app.android.box.waveprotocol.org.androidwave.models.TypeIdGenerator;
+import app.android.box.waveprotocol.org.androidwave.service.models.TypeIdGenerator;
 
 public class WaveService {
 
@@ -71,30 +71,13 @@ public class WaveService {
         this.waveUsername = waveUsername;
     }
 
-    public class WaveSession extends AsyncTask<String, Void, String>{
-
-        @Override
-        protected String doInBackground(String... params) {
-            WaveSignIn waveSignIn = new WaveSignIn();
-            waveSessionId =waveSignIn.waveSignIn(params[0], params[1], params[2]);
-            return waveSessionId;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            if (result != null){
-                openWebSocketConnection(waveHost, waveSessionId);
-            }
-        }
-    }
-
     public boolean isWaveSessionStarted() {
         return waveSessionId != null;
     }
 
-    private void openWebSocketConnection(String hostName, String SessionId){
+    private void openWebSocketConnection(String hostName, String SessionId) {
 
-        String webSocketUrl = "http://"+ hostName +"/atmosphere";
+        String webSocketUrl = "http://" + hostName + "/atmosphere";
 
         idGenerator = new IdGeneratorImpl(webSocketUrl, new IdGeneratorImpl.Seed() {
             @Override
@@ -107,6 +90,23 @@ public class WaveService {
 
 
 
+    }
+
+    public class WaveSession extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            WaveSignIn waveSignIn = new WaveSignIn();
+            waveSessionId = waveSignIn.waveSignIn(params[0], params[1], params[2]);
+            return waveSessionId;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result != null) {
+                openWebSocketConnection(waveHost, waveSessionId);
+            }
+        }
     }
 
 }

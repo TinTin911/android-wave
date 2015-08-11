@@ -1,4 +1,4 @@
-package app.android.box.waveprotocol.org.androidwave.models;
+package app.android.box.waveprotocol.org.androidwave.service.models;
 
 import org.waveprotocol.wave.model.id.IdGenerator;
 import org.waveprotocol.wave.model.id.WaveId;

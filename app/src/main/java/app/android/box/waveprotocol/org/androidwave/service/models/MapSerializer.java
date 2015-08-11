@@ -1,4 +1,4 @@
-package app.android.box.waveprotocol.org.androidwave.models;
+package app.android.box.waveprotocol.org.androidwave.service.models;
 
 public class MapSerializer implements org.waveprotocol.wave.model.util.Serializer<Type> {
 
