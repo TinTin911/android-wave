@@ -33,9 +33,12 @@ public class WaveService {
     private String waveSessionId;
     private String waveUsername;
 
-    private ParticipantId participantId;
-    private IdGenerator idGenerator;
-    private TypeIdGenerator typeIdGenerator;
+    private ParticipantId waveParticipantId;
+    private IdGenerator waveIdGenerator;
+    private TypeIdGenerator waveTypeIdGenerator;
+
+    private WaveWebSocketClient waveWebSocketClient;
+    private RemoteViewServiceMultiplexer waveChannel;
 
 
     public boolean waveSignUpTask(String host, String username, String password){
@@ -75,20 +78,39 @@ public class WaveService {
         return waveSessionId != null;
     }
 
-    private void openWebSocketConnection(String hostName, String SessionId) {
+    private void openWebSocketConnection(String hostName, String SessionId){
 
-        String webSocketUrl = "http://" + hostName + "/atmosphere";
+        String waveWebSocketUrl = "http://"+ hostName +"/atmosphere";
 
-        idGenerator = new IdGeneratorImpl(webSocketUrl, new IdGeneratorImpl.Seed() {
+        waveIdGenerator = new IdGeneratorImpl(waveWebSocketUrl, new IdGeneratorImpl.Seed() {
             @Override
             public String get() {
                 return waveSessionId.substring(0, 5);
             }
         });
 
-        typeIdGenerator = TypeIdGenerator.get(idGenerator);
+        waveTypeIdGenerator = TypeIdGenerator.get(waveIdGenerator);
 
+        waveWebSocketClient = new WaveWebSocketClient(waveWebSocketUrl, waveSessionId);
 
+        waveWebSocketClient.connect(new WaveWebSocketClient.ConnectionListener() {
+            @Override
+            public void onConnect() {
+
+            }
+
+            @Override
+            public void onReconnect() {
+
+            }
+
+            @Override
+            public void onDisconnect() {
+
+            }
+        });
+
+        waveChannel = new RemoteViewServiceMultiplexer(waveWebSocketClient, waveParticipantId.getAddress());
 
     }
 
