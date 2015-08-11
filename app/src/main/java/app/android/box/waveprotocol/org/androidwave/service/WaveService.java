@@ -114,6 +114,13 @@ public class WaveService {
 
     }
 
+    private void closeWebSocket() {
+
+        waveIdGenerator = null;
+        waveChannel = null;
+        waveWebSocketClient = null;
+    }
+
     public class WaveSession extends AsyncTask<String, Void, String> {
 
         @Override
