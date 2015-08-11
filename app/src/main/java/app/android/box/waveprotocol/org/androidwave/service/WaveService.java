@@ -25,6 +25,9 @@ import org.waveprotocol.wave.model.id.IdGenerator;
 import org.waveprotocol.wave.model.id.IdGeneratorImpl;
 import org.waveprotocol.wave.model.wave.ParticipantId;
 
+import java.util.Collections;
+
+import app.android.box.waveprotocol.org.androidwave.service.models.Model;
 import app.android.box.waveprotocol.org.androidwave.service.models.TypeIdGenerator;
 
 public class WaveService {
@@ -119,6 +122,24 @@ public class WaveService {
         waveIdGenerator = null;
         waveChannel = null;
         waveWebSocketClient = null;
+    }
+
+    public String createModel() {
+
+        return null;
+    }
+
+    public void openModel(String modelId) {
+
+    }
+
+    public Model getModel(String modelId) {
+
+        return null;
+    }
+
+    public void closeModel(String modelId) {
+
     }
 
     public class WaveSession extends AsyncTask<String, Void, String> {
