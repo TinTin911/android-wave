@@ -21,14 +21,17 @@ package app.android.box.waveprotocol.org.androidwave.service;
 
 import android.os.AsyncTask;
 
+import org.waveprotocol.wave.model.document.WaveContext;
 import org.waveprotocol.wave.model.id.IdGenerator;
 import org.waveprotocol.wave.model.id.IdGeneratorImpl;
 import org.waveprotocol.wave.model.id.WaveId;
 import org.waveprotocol.wave.model.wave.ParticipantId;
 import org.waveprotocol.wave.model.waveref.WaveRef;
+import org.waveprotocol.wave.model.util.Pair;
 
 import java.util.Collections;
 import java.util.Timer;
+import java.util.Map;
 
 import app.android.box.waveprotocol.org.androidwave.service.concurrencycontrol.MuxConnector;
 import app.android.box.waveprotocol.org.androidwave.service.concurrencycontrol.MuxConnector.Command;
@@ -50,6 +53,7 @@ public class WaveService {
     private WaveWebSocketClient waveWebSocketClient;
     private RemoteViewServiceMultiplexer waveChannel;
 
+    private Map<WaveRef, Pair<WaveRender, Model>> waveStore;
 
 
 
@@ -136,9 +140,9 @@ public class WaveService {
     public String createModel() {
 
         WaveId newWaveId = waveTypeIdGenerator.newWaveId();
-        WaveRef waveRef = WaveRef.of(newWaveId);
+        final WaveRef waveRef = WaveRef.of(newWaveId);
 
-        WaveRender waveRender = new WaveRender(true, waveRef, waveChannel, waveParticipantId,
+        final WaveRender waveRender = new WaveRender(true, waveRef, waveChannel, waveParticipantId,
                 Collections.<ParticipantId>emptySet(), waveIdGenerator, null, timer);
 
         waveRender.init(new Command() {
@@ -146,6 +150,10 @@ public class WaveService {
             @Override
             public void execute() {
 
+                WaveContext wave = waveRender.getWaveContext();
+                Model model = Model.create(wave, waveHost, waveParticipantId, true, waveIdGenerator);
+
+                waveStore.put(waveRef, new Pair<WaveRender, Model>(waveRender, model));
             }
         });
 
