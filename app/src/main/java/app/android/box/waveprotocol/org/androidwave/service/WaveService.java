@@ -30,6 +30,8 @@ import org.waveprotocol.wave.model.waveref.WaveRef;
 import java.util.Collections;
 import java.util.Timer;
 
+import app.android.box.waveprotocol.org.androidwave.service.concurrencycontrol.MuxConnector;
+import app.android.box.waveprotocol.org.androidwave.service.concurrencycontrol.MuxConnector.Command;
 import app.android.box.waveprotocol.org.androidwave.service.models.Model;
 import app.android.box.waveprotocol.org.androidwave.service.models.TypeIdGenerator;
 
@@ -139,6 +141,14 @@ public class WaveService {
         WaveRender waveRender = new WaveRender(true, waveRef, waveChannel, waveParticipantId,
                 Collections.<ParticipantId>emptySet(), waveIdGenerator, null, timer);
 
+        waveRender.init(new Command() {
+
+            @Override
+            public void execute() {
+
+            }
+        });
+
         return null;
     }
 
@@ -171,5 +181,4 @@ public class WaveService {
             }
         }
     }
-
 }
