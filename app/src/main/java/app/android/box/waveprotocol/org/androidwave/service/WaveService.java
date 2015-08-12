@@ -23,9 +23,12 @@ import android.os.AsyncTask;
 
 import org.waveprotocol.wave.model.id.IdGenerator;
 import org.waveprotocol.wave.model.id.IdGeneratorImpl;
+import org.waveprotocol.wave.model.id.WaveId;
 import org.waveprotocol.wave.model.wave.ParticipantId;
+import org.waveprotocol.wave.model.waveref.WaveRef;
 
 import java.util.Collections;
+import java.util.Timer;
 
 import app.android.box.waveprotocol.org.androidwave.service.models.Model;
 import app.android.box.waveprotocol.org.androidwave.service.models.TypeIdGenerator;
@@ -36,12 +39,16 @@ public class WaveService {
     private String waveSessionId;
     private String waveUsername;
 
+    private Timer timer;
+
     private ParticipantId waveParticipantId;
     private IdGenerator waveIdGenerator;
     private TypeIdGenerator waveTypeIdGenerator;
 
     private WaveWebSocketClient waveWebSocketClient;
     private RemoteViewServiceMultiplexer waveChannel;
+
+
 
 
     public boolean waveSignUpTask(String host, String username, String password){
@@ -125,6 +132,12 @@ public class WaveService {
     }
 
     public String createModel() {
+
+        WaveId newWaveId = waveTypeIdGenerator.newWaveId();
+        WaveRef waveRef = WaveRef.of(newWaveId);
+
+        WaveRender waveRender = new WaveRender(true, waveRef, waveChannel, waveParticipantId,
+                Collections.<ParticipantId>emptySet(), waveIdGenerator, null, timer);
 
         return null;
     }

@@ -4,6 +4,5 @@ import org.waveprotocol.box.common.comms.ProtocolSubmitResponse;
 
 public interface SubmitResponseCallback {
 
-    public void run(ProtocolSubmitResponse response);
+    void run(ProtocolSubmitResponse response);
 }
-
