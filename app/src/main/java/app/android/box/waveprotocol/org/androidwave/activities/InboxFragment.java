@@ -42,7 +42,7 @@ public class InboxFragment extends Fragment {
             public void onClick(View v) {
                 Intent openNewWavectivity = new Intent("app.android.box.waveprotocol.org.androidwave.NEWWAVEACTIVITY");
                 startActivity(openNewWavectivity);
-                //test
+                //test5
                 //setContentView(R.layout.activity_new_wave);
             }
         });
