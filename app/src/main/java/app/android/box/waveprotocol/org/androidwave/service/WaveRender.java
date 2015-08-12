@@ -3,11 +3,11 @@ package app.android.box.waveprotocol.org.androidwave.service;
 import org.waveprotocol.wave.concurrencycontrol.common.UnsavedDataListener;
 import org.waveprotocol.wave.model.conversation.ObservableConversationView;
 import org.waveprotocol.wave.model.conversation.WaveBasedConversationView;
+import org.waveprotocol.wave.model.document.WaveContext;
 import org.waveprotocol.wave.model.id.IdGenerator;
 import org.waveprotocol.wave.model.wave.ParticipantId;
 import org.waveprotocol.wave.model.wave.data.WaveViewData;
 import org.waveprotocol.wave.model.wave.data.impl.WaveViewDataImpl;
-import org.waveprotocol.wave.model.wave.opbased.ObservableWaveView;
 import org.waveprotocol.wave.model.wave.opbased.OpBasedWavelet;
 import org.waveprotocol.wave.model.wave.opbased.WaveViewImpl;
 import org.waveprotocol.wave.model.waveref.WaveRef;
@@ -31,6 +31,7 @@ public class WaveRender {
 
     private WaveViewData waveData;
     private MuxConnector connector;
+    private WaveContext waveContext;
 
     private ObservableConversationView conversations;
     private WaveViewImpl<OpBasedWavelet> wave;
@@ -86,6 +87,18 @@ public class WaveRender {
 
     private IdGenerator getIdGenerator() {
         return idGenerator;
+    }
+
+    public WaveContext getWaveContext() {
+
+        if (isClosed) {
+            return null;
+        }
+        if (waveContext == null) {
+            waveContext = new WaveContext(getWave(), getConversations(), null, null);
+        }
+
+        return waveContext;
     }
 
     private MuxConnector createConnector() {
