@@ -21,6 +21,7 @@ package app.android.box.waveprotocol.org.androidwave.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -50,6 +51,7 @@ public class InboxActivity extends AppCompatActivity implements FragmentDrawer.F
     ImageButton FAB;
     Button singOut;
     ImageButton search;
+
 
 
 
@@ -93,7 +95,9 @@ public class InboxActivity extends AppCompatActivity implements FragmentDrawer.F
         }
 
         if(id == R.id.action_search){
-            Toast.makeText(getApplicationContext(), "Search action is selected!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Search action is selected!", Toast.LENGTH_SHORT).show();
+            Intent openNewWavectivity = new Intent("app.android.box.waveprotocol.org.androidwave.SEARCHACTIVITY");
+            startActivity(openNewWavectivity);
             return true;
         }
 
