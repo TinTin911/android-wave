@@ -9,11 +9,14 @@ import org.waveprotocol.wave.model.operation.wave.WaveletOperationContext;
 import org.waveprotocol.wave.model.operation.wave.BasicWaveletOperationContextFactory;
 import org.waveprotocol.wave.model.operation.wave.WaveletOperationContext.Factory;
 import org.waveprotocol.wave.model.util.CollectionUtils;
+import org.waveprotocol.wave.model.util.ReadableStringMap;
 import org.waveprotocol.wave.model.util.StringMap;
 import org.waveprotocol.wave.model.wave.ParticipantId;
 import org.waveprotocol.wave.model.wave.ParticipationHelper;
 import org.waveprotocol.wave.model.wave.data.ObservableWaveletData;
 import org.waveprotocol.wave.model.wave.opbased.OpBasedWavelet;
+
+import java.util.Collection;
 
 public class WaveletOperationalizer {
 
@@ -53,5 +56,16 @@ public class WaveletOperationalizer {
         Preconditions.checkState(!map.containsKey(key));
         map.put(key, value);
         return value;
+    }
+
+    public Collection<ObservableWaveletData> getWavelets() {
+        final Collection<ObservableWaveletData> targets = CollectionUtils.createQueue();
+        this.wavelets.each(new ReadableStringMap.ProcV<LiveTarget<ObservableWaveletData, WaveletOperation>>() {
+            @Override
+            public void apply(String id, LiveTarget<ObservableWaveletData, WaveletOperation> triple) {
+                targets.add(triple.getTarget());
+            }
+        });
+        return targets;
     }
 }

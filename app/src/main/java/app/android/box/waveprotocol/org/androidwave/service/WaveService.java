@@ -33,8 +33,7 @@ import java.util.Collections;
 import java.util.Timer;
 import java.util.Map;
 
-import app.android.box.waveprotocol.org.androidwave.service.concurrencycontrol.MuxConnector;
-import app.android.box.waveprotocol.org.androidwave.service.concurrencycontrol.MuxConnector.Command;
+import app.android.box.waveprotocol.org.androidwave.service.concurrencycontrol.Connector.Command;
 import app.android.box.waveprotocol.org.androidwave.service.models.Model;
 import app.android.box.waveprotocol.org.androidwave.service.models.TypeIdGenerator;
 
@@ -157,7 +156,7 @@ public class WaveService {
             }
         });
 
-        return null;
+        return waveRef.getWaveId().serialise();
     }
 
     public void openModel(String modelId) {

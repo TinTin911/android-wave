@@ -1,6 +1,6 @@
 package app.android.box.waveprotocol.org.androidwave.service.concurrencycontrol;
 
-public interface MuxConnector {
+public interface Connector {
 
     public interface Command {
 
