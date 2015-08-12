@@ -58,7 +58,7 @@ public class InboxActivity extends AppCompatActivity{
             public void onClick(View v) {
                 Intent openNewWavectivity = new Intent("app.android.box.waveprotocol.org.androidwave.NEWWAVEACTIVITY");
                 startActivity(openNewWavectivity);
-                //test
+                //new wave
                 //setContentView(R.layout.activity_new_wave);
             }
         });
