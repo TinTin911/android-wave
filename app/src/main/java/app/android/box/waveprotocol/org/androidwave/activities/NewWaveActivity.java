@@ -20,6 +20,9 @@
 package app.android.box.waveprotocol.org.androidwave.activities;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -28,6 +31,7 @@ import app.android.box.waveprotocol.org.androidwave.R;
 
 public class NewWaveActivity extends AppCompatActivity{
     private Toolbar mToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,22 @@ public class NewWaveActivity extends AppCompatActivity{
 
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        Fragment fragment = null;
+        String title = getString(R.string.app_name);
+
+                fragment = new NewWaveFragment();
+                title = getString(R.string.new_wave_name);
+
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container_body_newWave, fragment);
+            fragmentTransaction.commit();
+
+            // set the toolbar title
+            getSupportActionBar().setTitle(title);
+        }
     }
 
 //
