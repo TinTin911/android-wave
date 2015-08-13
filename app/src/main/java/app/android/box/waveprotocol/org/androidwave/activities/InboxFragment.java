@@ -8,14 +8,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 import app.android.box.waveprotocol.org.androidwave.R;
 
 
-public class InboxFragment extends Fragment {
+public class InboxFragment extends ListFragment {
 
 
 
@@ -26,6 +28,13 @@ public class InboxFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        String[] values = new String[] { "Message1", "Message2", "Message3",
+                "Message4", "Message5", "Message6", "Message7", "Message8",
+                "Message9", "Message10" };
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, values);
+        setListAdapter(adapter);
 
     }
 
