@@ -55,7 +55,7 @@
         </activity>
 
         <activity android:name=".activities.SearchActivity"
-            android:label="@string/search_name"
+            android:label=""
             android:theme="@style/MyMaterialTheme">
             <intent-filter>
                 <action android:name="app.android.box.waveprotocol.org.androidwave.SEARCHACTIVITY" />
