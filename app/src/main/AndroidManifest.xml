@@ -62,5 +62,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activities.Test"
+            android:label=""
+            android:theme="@style/MyMaterialTheme">
+            <intent-filter>
+                <action android:name="app.android.box.waveprotocol.org.androidwave.TEST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

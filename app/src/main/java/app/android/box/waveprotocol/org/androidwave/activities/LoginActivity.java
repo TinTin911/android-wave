@@ -53,8 +53,10 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //startLoginSession(Util.getHostAndUserNames(username.getText().toString())[1], Util.getHostAndUserNames(username.getText().toString())[0], password.getText().toString());
-                Intent openLoginActivity = new Intent("app.android.box.waveprotocol.org.androidwave.INBOXACTIVITY");
-                startActivity(openLoginActivity);
+//                Intent openLoginActivity = new Intent("app.android.box.waveprotocol.org.androidwave.INBOXACTIVITY");
+//                startActivity(openLoginActivity);
+                Intent openTest= new Intent("app.android.box.waveprotocol.org.androidwave.TEST");
+                startActivity(openTest);
             }
         });
 

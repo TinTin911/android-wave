@@ -28,6 +28,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import app.android.box.waveprotocol.org.androidwave.R;
@@ -47,10 +48,12 @@ public class NewWaveActivity extends AppCompatActivity{
 
         Fragment fragment = null;
         String title = getString(R.string.app_name);
+        ImageButton myImage;
 
 
                 fragment = new NewWaveFragment();
                 title = getString(R.string.new_wave_name);
+
 
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
