@@ -48,6 +48,7 @@
         <activity android:name=".activities.NewWaveActivity"
             android:label=""
             android:theme="@style/MyMaterialTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".activities.InboxActivity"/>
             <intent-filter>
                 <action android:name="app.android.box.waveprotocol.org.androidwave.NEWWAVEACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />

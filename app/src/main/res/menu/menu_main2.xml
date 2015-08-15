@@ -7,7 +7,7 @@
         android:id="@+id/action_forward"
         android:title="@string/action_search"
         android:orderInCategory="100"
-        android:icon="@drawable/ic_action_forword"
+        android:icon="@drawable/ic_arrow_forward_white_2"
         app:showAsAction="ifRoom" />
 
 </menu>
