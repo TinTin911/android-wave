@@ -36,6 +36,19 @@
     <string name="title_home">Inbox</string>
     <string name="title_signout">Sign out</string>
 
+    <string-array name="friend_names">
+        <item>Roshan</item>
+        <item>Rukmal</item>
+        <item>Eranga</item>
+        <item>Binash</item>
+        <item>Danister</item>
+        <item>Asiri</item>
+        <item>My3</item>
+        <item>Ronali</item>
+        <item>Sampath</item>
+        <item>Roshan2</item>
+    </string-array>
+
 
 
 </resources>

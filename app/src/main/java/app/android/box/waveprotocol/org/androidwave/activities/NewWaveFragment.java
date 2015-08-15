@@ -18,7 +18,7 @@ import app.android.box.waveprotocol.org.androidwave.R;
 
 public class NewWaveFragment extends ListFragment {
 
-
+    Myadapter myadapter;
 
     public NewWaveFragment() {
         // Required empty public constructor
@@ -28,12 +28,13 @@ public class NewWaveFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String[] values = new String[] { "friend1", "friend2", "friend3",
-                "friend4", "friend5", "friend6", "friend7", "friend8",
-                "friend9", "friend10" };
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1, values);
-        setListAdapter(adapter);
+//        String[] values = new String[] { "friend1", "friend2", "friend3",
+//                "friend4", "friend5", "friend6", "friend7", "friend8",
+//                "friend9", "friend10" };
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+//                android.R.layout.simple_list_item_1, values);
+        myadapter = new Myadapter(getActivity());
+        setListAdapter(myadapter);
 
     }
 
