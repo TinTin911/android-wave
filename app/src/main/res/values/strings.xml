@@ -37,16 +37,16 @@
     <string name="title_signout">Sign out</string>
 
     <string-array name="friend_names">
+        <item>Ali</item>
         <item>Roshan</item>
-        <item>Rukmal</item>
-        <item>Eranga</item>
-        <item>Binash</item>
-        <item>Danister</item>
-        <item>Asiri</item>
-        <item>My3</item>
-        <item>Ronali</item>
-        <item>Sampath</item>
-        <item>Roshan2</item>
+        <item>Evan</item>
+        <item>Grobmeier</item>
+        <item>Upayavira</item>
+        <item>Blossom</item>
+        <item>Michael</item>
+        <item>Pablo</item>
+        <item>Yuri</item>
+        <item>Dain</item>
     </string-array>
 
 
