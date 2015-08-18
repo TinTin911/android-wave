@@ -16,7 +16,7 @@ import app.android.box.waveprotocol.org.androidwave.R;
 public class Myadapter extends BaseAdapter{
     private Context context;
     String[] friendNames;
-    int[] images = {R.drawable.lette_a,R.drawable.lette_a,R.drawable.lette_a,R.drawable.lette_a,R.drawable.lette_a,R.drawable.lette_a,R.drawable.lette_a,R.drawable.lette_a,R.drawable.lette_a,R.drawable.lette_a};
+    int[] images = {R.drawable.letter_r,R.drawable.letter_r,R.drawable.letter_e,R.drawable.letter_b,R.drawable.letter_d,R.drawable.letter_a,R.drawable.letter_m,R.drawable.letter_r,R.drawable.letter_s,R.drawable.letter_r};
 
     public Myadapter(Context context){
         this.context = context;
