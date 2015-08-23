@@ -5,6 +5,7 @@ package app.android.box.waveprotocol.org.androidwave.activities;
  */
 import android.app.Activity;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ListFragment;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -51,6 +53,11 @@ public class NewWaveFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         String item = (String) getListAdapter().getItem(position);
         Toast.makeText(getActivity(), item + " selected", Toast.LENGTH_LONG).show();
+//        ImageView img= (ImageView) findViewById(R.id.image);
+//        img.setImageResource(R.drawable.my_image);
+
+//        ImageView img = new ImageView(this);
+//        img.setImageResource(R.drawable.my_image);
 
     }
 

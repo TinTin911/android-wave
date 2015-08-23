@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import app.android.box.waveprotocol.org.androidwave.R;
 
@@ -38,6 +40,18 @@ public class InboxFragment extends ListFragment {
 //        setListAdapter(adapter);
         myadapter = new MessageAdapter(getActivity());
         setListAdapter(myadapter);
+
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        String item = (String) getListAdapter().getItem(position);
+        Toast.makeText(getActivity(), item + " selected", Toast.LENGTH_LONG).show();
+//        ImageView img= (ImageView) findViewById(R.id.image);
+//        img.setImageResource(R.drawable.my_image);
+
+//        ImageView img = new ImageView(this);
+//        img.setImageResource(R.drawable.my_image);
 
     }
 
