@@ -49,6 +49,19 @@
         <item>Dain</item>
     </string-array>
 
+    <string-array name="friend_names2">
+        <item>>wave message from Ali</item>
+        <item>>wave message from Roshan</item>
+        <item>>wave message from Evan</item>
+        <item>>wave message from Grobmeier</item>
+        <item>>wave message from Upayavira</item>
+        <item>>wave message from Blossom</item>
+        <item>>wave message from Michael</item>
+        <item>>wave message from Pablo</item>
+        <item>>wave message from Yuri</item>
+        <item>>wave message from Dain</item>
+    </string-array>
+
     <string name="title_new_wave_forworad">Forward</string>
 
 
