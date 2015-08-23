@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import app.android.box.waveprotocol.org.androidwave.R;
 
@@ -31,11 +33,24 @@ public class NewWaveFragment extends ListFragment {
 //        String[] values = new String[] { "friend1", "friend2", "friend3",
 //                "friend4", "friend5", "friend6", "friend7", "friend8",
 //                "friend9", "friend10" };
+//
 //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 //                android.R.layout.simple_list_item_1, values);
+//        setListAdapter(adapter);
+
+
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+//                android.R.layout.simple_list_item_1, values);
+
         myadapter = new Myadapter(getActivity());
         setListAdapter(myadapter);
 
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        String item = (String) getListAdapter().getItem(position);
+        Toast.makeText(getActivity(), item + " selected", Toast.LENGTH_LONG).show();
     }
 
     @Override
