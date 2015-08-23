@@ -90,6 +90,10 @@ public class NewWaveActivity extends AppCompatActivity{
             return true;
         }
 
+        if (id == R.id.action_forward) {
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
