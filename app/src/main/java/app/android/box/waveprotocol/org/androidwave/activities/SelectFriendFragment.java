@@ -59,7 +59,7 @@ public class SelectFriendFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_new_wave, container, false);
+        View rootView = inflater.inflate(R.layout.select_friend_fragment, container, false);
         // Inflate the layout for this fragment
         return rootView;
     }

@@ -39,7 +39,7 @@ public class SelectFriendActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_wave);
+        setContentView(R.layout.select_friend_activity);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
