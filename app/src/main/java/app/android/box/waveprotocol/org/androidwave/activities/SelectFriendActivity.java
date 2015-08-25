@@ -30,11 +30,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import app.android.box.waveprotocol.org.androidwave.R;
 
-public class NewWaveActivity extends AppCompatActivity{
+public class SelectFriendActivity extends AppCompatActivity{
     private Toolbar mToolbar;
 
     @Override
@@ -53,7 +52,7 @@ public class NewWaveActivity extends AppCompatActivity{
         ImageButton myImage;
 
 
-                fragment = new NewWaveFragment();
+                fragment = new SelectFriendFragment();
                 title = getString(R.string.new_wave_name);
 
 

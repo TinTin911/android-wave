@@ -45,7 +45,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.NewWaveActivity"
+        <activity android:name=".activities.SelectFriendActivity"
             android:label=""
             android:theme="@style/MyMaterialTheme">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".activities.InboxActivity"/>

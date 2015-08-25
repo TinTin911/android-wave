@@ -20,11 +20,11 @@ import android.widget.Toast;
 import app.android.box.waveprotocol.org.androidwave.R;
 
 
-public class NewWaveFragment extends ListFragment {
+public class SelectFriendFragment extends ListFragment {
 
     Myadapter myadapter;
 
-    public NewWaveFragment() {
+    public SelectFriendFragment() {
         // Required empty public constructor
     }
 
