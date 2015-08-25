@@ -13,12 +13,12 @@ import app.android.box.waveprotocol.org.androidwave.R;
 /**
  * Created by roellk on 8/15/2015.
  */
-public class Myadapter extends BaseAdapter{
+public class Friendadapter extends BaseAdapter{
     private Context context;
     String[] friendNames;
     int[] images = {R.drawable.letter_a,R.drawable.letter_r,R.drawable.letter_e,R.drawable.letter_g,R.drawable.letter_u,R.drawable.letter_b,R.drawable.letter_m,R.drawable.letter_p,R.drawable.letter_y,R.drawable.letter_d};
 
-    public Myadapter(Context context){
+    public Friendadapter(Context context){
         this.context = context;
         friendNames = context.getResources().getStringArray(R.array.friend_names);
     }

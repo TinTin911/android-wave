@@ -4,16 +4,11 @@ package app.android.box.waveprotocol.org.androidwave.activities;
  * Created by Ravi on 29/07/15.
  */
 import android.app.Activity;
-import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,7 +17,7 @@ import app.android.box.waveprotocol.org.androidwave.R;
 
 public class SelectFriendFragment extends ListFragment {
 
-    Myadapter myadapter;
+    Friendadapter friendadapter;
 
     public SelectFriendFragment() {
         // Required empty public constructor
@@ -44,8 +39,8 @@ public class SelectFriendFragment extends ListFragment {
 //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 //                android.R.layout.simple_list_item_1, values);
 
-        myadapter = new Myadapter(getActivity());
-        setListAdapter(myadapter);
+        friendadapter = new Friendadapter(getActivity());
+        setListAdapter(friendadapter);
 
     }
 
