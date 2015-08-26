@@ -27,7 +27,7 @@ public class TestMainActivity extends AppCompatActivity implements AdapterView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity);
 
         mListView = (ListView) findViewById(R.id.listView);
         mDataSource = new DataSource(this);

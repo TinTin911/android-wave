@@ -42,7 +42,7 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login_activity);
 
         login = (Button) findViewById(R.id.btn_login);
         sighup = (TextView) findViewById(R.id.link_signup);
