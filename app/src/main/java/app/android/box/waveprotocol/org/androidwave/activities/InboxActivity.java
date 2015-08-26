@@ -21,7 +21,6 @@ package app.android.box.waveprotocol.org.androidwave.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -33,7 +32,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import app.android.box.waveprotocol.org.androidwave.R;
 
@@ -58,7 +56,7 @@ public class InboxActivity extends AppCompatActivity implements FragmentDrawer.F
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inbox);
+        setContentView(R.layout.inbox_activity);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
