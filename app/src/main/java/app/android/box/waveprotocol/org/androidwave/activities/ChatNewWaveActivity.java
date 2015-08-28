@@ -13,17 +13,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
+
 import app.android.box.waveprotocol.org.androidwave.R;
 
 /**
  * Created by roellk on 8/23/2015.
  */
 public class ChatNewWaveActivity extends AppCompatActivity {
+
     private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_new_wave_activtiy);
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(mToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -33,14 +38,14 @@ public class ChatNewWaveActivity extends AppCompatActivity {
         ImageButton myImage;
 
 
-        fragment = new SelectFriendFragment();
+        fragment = new ChatNewWaveFragment();
         title = getString(R.string.new_wave_name);
 
 
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_body_newWave, fragment);
+            fragmentTransaction.replace(R.id.container_body_chat_newWave, fragment);
             fragmentTransaction.commit();
 
             // set the toolbar title
