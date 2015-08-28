@@ -53,7 +53,7 @@ public class SelectFriendActivity extends AppCompatActivity{
 
 
                 fragment = new SelectFriendFragment();
-                title = getString(R.string.new_wave_name);
+                title = getString(R.string.title_friends);
 
 
         if (fragment != null) {

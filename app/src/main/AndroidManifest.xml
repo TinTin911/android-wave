@@ -67,6 +67,7 @@
         <activity android:name=".activities.ChatNewWaveActivity"
             android:label=""
             android:theme="@style/MyMaterialTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".activities.SelectFriendActivity"/>
             <intent-filter>
                 <action android:name="app.android.box.waveprotocol.org.androidwave.CHATNEWWAVEACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />
