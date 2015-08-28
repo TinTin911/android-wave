@@ -76,8 +76,8 @@ public class ChatNewWaveActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_forward) {
-            Intent openChatNewWaveActivity = new Intent("app.android.box.waveprotocol.org.androidwave.CHATNEWWAVEACTIVITY");
-            startActivity(openChatNewWaveActivity);
+            Intent openLoginActivity = new Intent("app.android.box.waveprotocol.org.androidwave.INBOXACTIVITY");
+            startActivity(openLoginActivity);
         }
 
         return super.onOptionsItemSelected(item);
